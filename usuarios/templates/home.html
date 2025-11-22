@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Usuários - Apresentação</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 API de Usuários</h1>
+            <p>Demonstração do JSON e dados formatados</p>
+        </div>
+
+        <div class="content">
+            <!-- Card com dados formatados -->
+            <div class="card user-card">
+                <h2>👥 Lista de Usuários</h2>
+                <ul class="user-list">
+                    {% for usuario in usuarios %}
+                    <li class="user-item">
+                        <div class="user-name">{{ usuario.nome }}</div>
+                        <div class="user-email">{{ usuario.email }}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Card com código JSON -->
+            <div class="card">
+                <h2>📋 Código JSON</h2>
+                <pre class="json-code"><code>{{ json_data }}</code></pre>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>API disponível em: <strong>/api/usuarios/</strong></p>
+            <p>Desenvolvido com Django Rest Framework</p>
+        </div>
+    </div>
+</body>
+</html>
