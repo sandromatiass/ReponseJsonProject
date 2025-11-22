@@ -1,4 +1,3 @@
-```markdown
 # 🚀 API de Usuários - Django REST Framework
 
 Este projeto demonstra a criação de uma API RESTful usando Django Rest Framework para retornar dados de usuários em formato JSON.
@@ -26,22 +25,32 @@ Este projeto demonstra a criação de uma API RESTful usando Django Rest Framewo
 ## 📁 Estrutura do Projeto
 
 ```
-backend/
-├── 📄 manage.py
+ReponseJsonProject/
 ├── 📁 backend/
-│   ├── 📄 settings.py
-│   ├── 📄 urls.py
-│   └── 📄 wsgi.py
-├── 📁 usuarios/
-│   ├── 📄 views.py
-│   ├── 📄 urls.py
-│   └── 📁 templates/
-│       └── 📄 home.html
-├── 📁 static/
-│   └── 📁 css/
-│       └── 📄 style.css
+│   ├── 📄 manage.py
+│   ├── 📁 backend/
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 settings.py
+│   │   ├── 📄 urls.py
+│   │   └── 📄 wsgi.py
+│   ├── 📁 usuarios/
+│   │   ├── 📄 __init__.py
+│   │   ├── 📄 admin.py
+│   │   ├── 📄 apps.py
+│   │   ├── 📄 models.py
+│   │   ├── 📄 tests.py
+│   │   ├── 📄 views.py
+│   │   ├── 📄 urls.py
+│   │   ├── 📄 serializers.py
+│   │   └── 📁 templates/
+│   │       └── 📄 home.html
+│   ├── 📁 static/
+│   │   └── 📁 css/
+│   │       └── 📄 style.css
+│   └── 📁 migrations/
 ├── 📄 usuarios.json
-└── 📄 README.md
+├── 📄 README.md
+└── 📁 venv/
 ```
 
 ## 🎯 Endpoints da API
@@ -78,7 +87,7 @@ backend/
 
 ### Passos para execução:
 
-1. **Clone ou baixe o projeto**
+1. **Navegue até a pasta do projeto**
 ```bash
 cd ReponseJsonProject
 ```
@@ -99,17 +108,13 @@ source venv/bin/activate
 pip install django djangorestframework
 ```
 
-4. **Execute as migrações**
+4. **Execute o servidor**
 ```bash
-python manage.py migrate
-```
-
-5. **Inicie o servidor**
-```bash
+cd backend
 python manage.py runserver
 ```
 
-6. **Acesse no navegador**
+5. **Acesse no navegador**
 - Interface web: http://localhost:8000/
 - API JSON: http://localhost:8000/api/usuarios/
 
@@ -131,14 +136,36 @@ A interface apresenta:
 - **Syntax highlighting** para o código JSON
 - **Animações suaves** e efeitos hover
 
-## 🔧 Desenvolvimento
+## 🔧 Arquivos Principais
 
-### Arquivos Principais:
+### Backend:
+- **`backend/settings.py`** - Configurações do Django
+- **`backend/urls.py`** - Rotas da aplicação
+- **`usuarios/views.py`** - Lógica da aplicação
+- **`usuarios/urls.py`** - Rotas do app usuarios
 
-- **`usuarios/views.py`**: Contém a lógica da aplicação
-- **`usuarios/templates/home.html`**: Template HTML da interface
-- **`static/css/style.css`**: Estilos CSS personalizados
-- **`backend/urls.py`**: Configuração de URLs
+### Frontend:
+- **`usuarios/templates/home.html`** - Template HTML
+- **`static/css/style.css`** - Estilos CSS
+- **`usuarios.json`** - Dados em formato JSON
+
+
+## 📝 Desenvolvimento
+
+### Comandos Úteis:
+```bash
+# Criar migrações
+python manage.py makemigrations
+
+# Aplicar migrações
+python manage.py migrate
+
+# Criar superusuário
+python manage.py createsuperuser
+
+# Coletar arquivos estáticos
+python manage.py collectstatic
+```
 
 ### Customizações CSS:
 - Gradientes modernos
@@ -146,10 +173,35 @@ A interface apresenta:
 - Destaque de sintaxe para JSON
 - Design responsivo com Grid CSS
 
-## 📝 Licença
+## 🐛 Solução de Problemas
+
+### Erro Comum: Django não encontrado
+```bash
+# Verifique a instalação
+pip list | grep Django
+
+# Reinstale se necessário
+pip install django djangorestframework
+```
+
+
+## 📄 Licença
 
 Este projeto foi desenvolvido para fins educacionais.
 
 ---
 
 **Desenvolvido com ❤️ usando Django REST Framework**
+
+## 🔗 Links Úteis
+
+- [Documentação Django](https://docs.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
+- [Python Official](https://www.python.org/)
+
+## 👥 Autor
+
+**Sandro Matias**  
+*Desenvolvedor Backend*
+
+---
